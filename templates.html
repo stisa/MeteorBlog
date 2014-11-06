@@ -2,7 +2,7 @@
   {{#each articleList}}
     <div class="block-group articlePreview {{ maybeSelected }}"> <!-- Add "selected" class (if selected) -->
       <a class='block articlePreview1' href="{{ pathFor 'article' }}">{{title}}</a> 
-      <div class="block articlePreview2">{{content}}</div>
+      <div class="block articlePreview2">{{ description }}</div>
     </div>
   {{/each}}
 </template>
@@ -37,9 +37,11 @@
 
 <template name = 'fullArticle'>
   <div class="block-group articleView">
-    <h2>{{ title }}</h2>
-    <p>{{ date }}</p>
-    <p>{{ content }}</p>
+    {{#markdown}}  <!-- yeah I know this is ugly, but there are conflicts between indents and markdown -->
+##{{ title }}          
+*{{ date }}*  
+{{ content }}
+    {{/markdown}}
   </div>
 </template>
 
@@ -48,6 +50,7 @@
     <div id='removable' class='block-group articlePreview'>
       <input id="author-input" class="block authorIn" required placeholder='Author'>
       <input id="title-input" class="block titleIn" required placeholder='Title'>
+      <input id="description-input" class="block descriptionIn" placeholder='Description (max lenght 100)' maxlength='100'>
       <textarea id='text-input' class='block areaText'></textarea>
       <button class='block saveButton'>Save</button>
     </div>
