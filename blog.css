@@ -53,17 +53,8 @@
 .articlePreview { background-color: rgba(0, 96, 145, 0.55); margin: 0.5em; padding:1em; color: black;}
 .header { width: 96%; background-color: rgba(56, 96, 123, 0.55); margin: 0.5em; padding:1em 0 1em 1em; color: black;}
 .article { padding-left: 1em;}
-.titleIn, .authorIn {width: 100%; margin-right: 0;}
-
-@media (min-width: 768px) {
-  .articlePreview1 { width: auto; margin-right: 1%; clear: left;}
-  .articlePreview2 { width: 80%;}
-  .header {width: 98.5%;}
-  .content { width: 80%;}
-  .sidebar {display: block; width: 19%; position: fixed; top: 5.1em;; right: 1.25em;}
-  .titleIn, .authorIn {width: 30%; margin-right: 0.5em;}
-
-}
+.titleIn, .authorIn {width: 100%; margin-right: 0px;}
+.areaText { height: 50em; width: 100%;}
 
 a {
   text-decoration: none;
@@ -77,4 +68,13 @@ h2 {
  color: white;
 }
 
-.areaText { height: 500px; width: 100%;}
+@media (min-width: 768px) {
+  .articlePreview1 { width: auto; margin-right: 1%; clear: left;}
+  .articlePreview2 { width: 80%;}
+  .header {width: 98.5%;}
+  .content { width: 80%;}
+  .sidebar {display: block; width: 19%; position: fixed; top: 5.1em;; right: 1.25em;}
+  .titleIn, .authorIn {width: 30%; margin-right: 0.5em;}
+  .saveButton {width: 5em;}
+
+}
