@@ -17,7 +17,7 @@ Router.map(function () {
     path: '/',
     // articles now under `articleList` instead of `this`
     data: {
-      articleList: function () {return Posts.find()},
+      articleList: function () {return Posts.find( {}, {sort: { dateSort: -1 }})},
       selectedArticle: {}
     }
   });

@@ -36,8 +36,11 @@
 </template>
 
 <template name = 'fullArticle'>
-  <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
+  <div class="block-group articleView">
+    <h2>{{ title }}</h2>
+    <p>{{ date }}</p>
+    <p>{{ content }}</p>
+  </div>
 </template>
 
 <template name="postSubmitter">

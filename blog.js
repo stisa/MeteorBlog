@@ -29,7 +29,8 @@ if (Meteor.isClient) {
       var authorIn = document.getElementById('author-input').value; //get post author
       var titleIn = document.getElementById('title-input').value;   //get post title
       var titleSlug = slugify(titleIn);                             //generate title slug
-      var mongoIn = { author: authorIn, title: titleIn, slug: titleSlug,content: textIn };
+      var dateIn = new Date();
+      var mongoIn = { author: authorIn, title: titleIn, date: dateIn.toDateString(), dateSort: new Date(), slug: titleSlug, content: textIn };
       Posts.insert(mongoIn);
 
       //remove post form
