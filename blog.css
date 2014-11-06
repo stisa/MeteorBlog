@@ -1,0 +1,80 @@
+/* CSS declarations go here */
+/*! PocketGrid 1.1.0
+* Copyright 2013 Arnaud Leray
+* MIT License
+*/
+/* Border-box-sizing */
+.block-group, .block, .block-group:after, .block:after, .block-group:before, .block:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Clearfix */
+.block-group {
+  *zoom: 1;
+}
+.block-group:before, .block-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.block-group:after {
+  clear: both;
+}
+
+.block-group {
+/* ul/li compatibility */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Nested grid */
+.block-group > .block-group {
+  clear: none;
+  float: left;
+  margin: 0 !important;
+}
+
+/* Default block */
+.block {
+  float: left;
+  width: 100%;
+}
+
+/* Inverse block */
+.inverse-float {
+  clear: left;
+  float: right;
+  padding-right: 1em;
+}
+.sidebar {display: none; background-color: rgba(186, 1, 1, 0.65); height: 5000px; padding: 1em 0 0 1em; clear: left; float: right;}
+.articlePreview { background-color: rgba(0, 96, 145, 0.55); margin: 0.5em; padding:1em; color: black;}
+.header { width: 96%; background-color: rgba(56, 96, 123, 0.55); margin: 0.5em; padding:1em 0 1em 1em; color: black;}
+.article { padding-left: 1em;}
+.titleIn, .authorIn {width: 100%; margin-right: 0;}
+
+@media (min-width: 768px) {
+  .articlePreview1 { width: auto; margin-right: 1%; clear: left;}
+  .articlePreview2 { width: 80%;}
+  .header {width: 98.5%;}
+  .content { width: 80%;}
+  .sidebar {display: block; width: 19%; position: fixed; top: 5.1em;; right: 1.25em;}
+  .titleIn, .authorIn {width: 30%; margin-right: 0.5em;}
+
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.articlePreview a:link, .articlePreview a:visited, .sidebar a:link, .sidebar a:visited, .header a:visited, .header a:link {
+ color: white;
+}
+
+.areaText { height: 500px; width: 100%;}

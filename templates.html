@@ -1,0 +1,52 @@
+<template name="home">
+  {{#each articleList}}
+    <div class="block-group articlePreview {{ maybeSelected }}"> <!-- Add "selected" class (if selected) -->
+      <a class='block articlePreview1' href="{{ pathFor 'article' }}">{{title}}</a> 
+      <div class="block articlePreview2">{{content}}</div>
+    </div>
+  {{/each}}
+</template>
+
+<template name='sidebar'>
+  <aside class='block sidebar'>
+    <h2>Articles</h2>
+    {{#each articleList}}
+      <div class="{{ maybeSelected }}"> <!-- Add "selected" class (if selected) -->
+        <a href="{{ pathFor 'article' }}"> {{title}} </a>
+      </div>
+    {{/each}}
+  </aside>
+</template>
+
+<template name='header'>
+  <div class="block header">
+    <a href="{{ pathFor 'home' }}">Home</a>
+    <div class="inverse-float">
+    <a href="/postsubmitter">New Post</a>
+  </div>
+  </div>
+</template>
+
+<template name = 'about'>
+  <h2>About this site</h2>
+</template>
+
+<template name = 'articles'>
+      {{> fullArticle selectedArticle}}
+</template>
+
+<template name = 'fullArticle'>
+  <h2>{{ title }}</h2>
+  <p>{{ content }}</p>
+</template>
+
+<template name="postSubmitter">
+  <div id='parentDestroy'>
+    <div id='removable' class='block-group articlePreview'>
+      <input id="author-input" class="block authorIn" required placeholder='Author'>
+      <input id="title-input" class="block titleIn" required placeholder='Title'>
+      <textarea id='text-input' class='areaText'></textarea>
+      <button class='saveButton'>Save</button>
+    </div>
+  </div>
+</template>
